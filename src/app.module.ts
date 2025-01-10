@@ -11,11 +11,7 @@ require("dotenv").config()
   imports: [
     TypeOrmModule.forRoot({
       type:'postgres',
-      host:'localhost',
-      port: 5432,
-      username:'root',
-      password:process.env.pass,
-      database:process.env.db,
+      url: process.env.DATABASE_URL,
       synchronize: true,
       autoLoadEntities:true,
     }),
