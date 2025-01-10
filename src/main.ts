@@ -7,8 +7,7 @@ declare const module: any;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const corsOptions = {
-    origin: '*',
-    credentials: true, 
+    origin: '*'
   };
   app.use(cors(corsOptions));
   await app.listen(process.env.PORT ?? 5000);
