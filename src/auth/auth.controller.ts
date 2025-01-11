@@ -22,7 +22,11 @@ export class AuthContoller {
         if (result.isvalid === 1) {
             const jwt = await this.authService.generateJwt(result.user);
             res.cookie("jwt", jwt, {
-                secure: true,
+                domain: 'https://aahar-i3ph.vercel.app',
+                path: '/',
+                secure: process.env.NODE_ENV === 'production',
+                expires : 600000,
+                sameSite : false,
               });
         
               return res.status(200).json({
