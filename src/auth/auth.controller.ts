@@ -23,8 +23,7 @@ export class AuthContoller {
             const jwt = await this.authService.generateJwt(result.user);
             res.cookie("jwt", jwt, {
                 sameSite:'None',
-                secure:true,
-                maxAge: 3600000, 
+                secure: process.env.NODE_ENV === 'production',
               });
         
               return res.status(200).json({
