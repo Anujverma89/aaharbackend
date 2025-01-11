@@ -7,7 +7,7 @@ declare const module: any;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const corsOptions = {
-     origin: ['https://aahar-i3ph.vercel.app/','https://aahar-i3ph.vercel.app'],
+     origin: 'https://aahar-i3ph.vercel.app',
      credentials: true,
   };
   app.use(cors(corsOptions));
