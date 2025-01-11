@@ -22,7 +22,7 @@ export class AuthContoller {
         if (result.isvalid === 1) {
             const jwt = await this.authService.generateJwt(result.user);
             res.cookie("jwt", jwt, {
-                SameSite:'None',
+                sameSite:'None',
                 secure:true,
                 maxAge: 3600000, 
               });
