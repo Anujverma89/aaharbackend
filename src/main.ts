@@ -8,7 +8,6 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const corsOptions = {
      origin: 'https://aahar-i3ph.vercel.app',
-     credentials: true,
   };
   app.use(cors(corsOptions));
   await app.listen(process.env.PORT ?? 5000);
