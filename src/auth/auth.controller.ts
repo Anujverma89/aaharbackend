@@ -22,8 +22,8 @@ export class AuthContoller {
         if (result.isvalid === 1) {
             const jwt = await this.authService.generateJwt(result.user);
             res.cookie("jwt", jwt, {
-                sameSite:'None',
-                secure: process.env.NODE_ENV === 'production',
+                sameSite:'none',
+                secure: true,
               });
         
               return res.status(200).json({
