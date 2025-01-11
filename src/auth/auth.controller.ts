@@ -24,7 +24,7 @@ export class AuthContoller {
             res.cookie("jwt", jwt, {
                 secure: process.env.NODE_ENV === 'production',
                 maxAge : 360000,
-                sameSite : 'None',
+                sameSite : 'Lax'
               });
         
               return res.status(200).json({
